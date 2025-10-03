@@ -1,19 +1,12 @@
-// Jenkinsfile - Un exemple simple
+// Jenkinsfile CORRIGÉ
 pipeline {
-    agent any // Exécute ce pipeline sur n'importe quel agent Jenkins disponible
-
+    agent any
     stages {
-        // Un "stage" est une étape logique du processus
         stage('Build') {
             steps {
-                // "steps" sont les commandes à exécuter
                 echo 'Démarrage de la compilation Maven...'
-                
-                // Pour Windows, on utilise la commande 'bat'
-                bat 'mvn clean install'
-                
-                // Sur un serveur Linux, on utiliserait 'sh'
-                // sh 'mvn clean install'
+                // CORRECTION ICI : 'sh' est la commande pour Linux
+                sh 'mvn clean install'
             }
         }
     }
